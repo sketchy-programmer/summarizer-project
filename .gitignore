@@ -1,0 +1,5 @@
+# Environment variables
+.env
+
+# Flask secret key
+flasksecretkey.py
