@@ -1,5 +1,18 @@
-# Environment variables
-.env
+# Ignore .env file in the root directory
+/.env
 
-# Flask secret key
-flasksecretkey.py
+# Ignore flasksecretkey.py in the root directory
+/flasksecretkey.py
+
+# Optional: Ignore .env files in any directory
+**/*.env
+
+# Optional: Ignore Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Optional: Ignore virtual environment directories
+venv/
+env/
+.venv/
