@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Summarizer - Instant Text Summaries</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">AI Summarizer</h1>
+            <p class="text-xl text-gray-600">Transform Long Texts into Concise Summaries</p>
+        </header>
+
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-semibold mb-4">Features</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        One-Click Summarization
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Powered by GPT-4.5
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Desktop Application
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-semibold mb-4">Get Started</h2>
+                <div class="space-y-4">
+                    <a href="{{ url_for('register') }}" class="w-full bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition text-center block">
+                        Sign Up
+                    </a>
+                    <a href="{{ url_for('login') }}" class="w-full border border-blue-500 text-blue-500 py-3 px-6 rounded-lg hover:bg-blue-50 transition text-center block">
+                        Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
