@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - AI Summarizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
+            <h1 class="text-4xl font-bold text-center mb-6 text-gray-800">Download AI Summarizer</h1>
+            
+            {% if current_user.is_premium %}
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6" role="alert">
+                <strong class="font-bold">Premium Access Activated!</strong>
+                <span class="block sm:inline">You can now download the desktop application.</span>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h2 class="text-2xl font-semibold text-blue-800 mb-4">Desktop Application</h2>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-700 mb-2">Compatible with Windows, macOS, and Linux</p>
+                            <p class="text-sm text-gray-500">Version 1.0.0 | Last Updated: March 2024</p>
+                        </div>
+                        <div>
+                            <a href="{{ url_for('download_app') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                                Get Download Links
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {% else %}
+            <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative mb-6" role="alert">
+                <strong class="font-bold">Unlock Full Access!</strong>
+                <span class="block sm:inline">Upgrade to Premium to download the desktop application.</span>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Premium Features</h2>
+                <ul class="mb-6 space-y-3 text-gray-600">
+                    <li class="flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Unlimited Desktop Summarizations
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Advanced GPT-4.5 Summarization
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Cross-Platform Support
+                    </li>
+                </ul>
+                
+                <form action="{{ url_for('create_checkout_session') }}" method="POST">
+                    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-xl transition duration-300 transform hover:scale-105">
+                        Upgrade to Premium - $1
+                    </button>
+                </form>
+            </div>
+            {% endif %}
+
+            <div class="mt-8 text-center">
+                <a href="{{ url_for('logout') }}" class="text-blue-500 hover:text-blue-700 font-semibold">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
